@@ -4,7 +4,9 @@ const path = require("path");
 
 const router = express.Router();
 
+
 router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended: false}));
 
 router.get("/", (req, res, next) => {
   res.sendFile(path.resolve("./views/index.html"));
@@ -12,7 +14,9 @@ router.get("/", (req, res, next) => {
 
 router.post("/", (req, res, next) => {
   console.log("post requested", req.body);
-  res.send("OK");
+  console.log("post requested", req.body.name);
+  console.log("post requested", req.body.email);
+  res.status(200).send("OK");
 });
 
 router.get("/users/", function(req, res) {

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { Nav } from "./nav.jsx";
 
 const AddUser = props => (
   <div>
-    <form action="/">
+    <form action="/" method="post">
       <input name="name" type="text" />
       <input type="email" name="email" id="email" />
       <button type="submit"> add </button>
@@ -53,6 +54,10 @@ class App extends Component {
       <React.Fragment>
         {itterateUSers.length ? itterateUSers : noUSers}
         <AddUser />
+        <br></br>
+        <Nav items={ ["one", "two", "three"] }></Nav>
+        <Nav items={ ["one", "two", "three"] }></Nav>
+        <Nav items={ ["one", "two", "three"] }></Nav>
       </React.Fragment>
     );
   }
