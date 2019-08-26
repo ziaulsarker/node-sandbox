@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Nav } from "./nav.jsx";
-
+import { Nav } from "./nav/nav.jsx";
 const AddUser = props => (
   <div>
     <form action="/" method="post">

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./nav.scss";
 
 function navItems(items = []){
     return items.map( (e,i) => ( <li key={ i }> { e } </li> ) );
