@@ -4,18 +4,21 @@ const path = require("path");
 
 const router = express.Router();
 
-
 router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({extended: false}));
+router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/", (req, res, next) => {
   res.sendFile(path.resolve("./views/index.html"));
 });
 
 router.post("/", (req, res, next) => {
-  console.log("post requested", req.body);
-  console.log("post requested", req.body.name);
-  console.log("post requested", req.body.email);
+  if (req.session) {
+    let { session } = req;
+    session.user = {
+      name: req.body.name,
+      email: req.body.email
+    };
+  }
   res.status(200).send("OK");
 });
 
