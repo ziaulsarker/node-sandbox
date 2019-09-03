@@ -12,6 +12,7 @@ let sesionsOption = {
   secret: "fuck you",
   saveUninitialized: true,
   resave: false,
+  name: "session_id",
   cookie: {
     secure: false
   }

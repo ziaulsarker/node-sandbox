@@ -119,6 +119,9 @@
       "saveSvgAsPng": true,
       "_nba": true,
       "$": true
-    }
+    },
+    "parserOptions": {
+      "sourceType": "module",
+    },
   }
   

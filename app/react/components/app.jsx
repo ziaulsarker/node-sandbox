@@ -17,6 +17,8 @@ class App extends Component {
   }
 
   componentDidMount() {
+
+    console.log("mounting app");
     let getUsers = new Promise((resolve, reject) => {
       fetch("/users")
         .then(res => res.json())
